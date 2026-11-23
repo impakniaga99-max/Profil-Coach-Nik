@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Nik Mohd Nor Arif</title>
+    <style>
+        /* CSS VANILLA - PENGGAYAAN */
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #3b82f6;
+            --text-light: #f8fafc;
+            --text-dark: #334155;
+            --bg-light: #f1f5f9;
+        }
+
+* {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding-bottom: 3rem;
+        }
+
+/* Navigasi Bahasa */
+        .lang-bar {
+            background-color: var(--primary);
+            padding: 1rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+.lang-btn {
+            background: transparent;
+            border: 1px solid var(--accent);
+            color: var(--text-light);
+            padding: 0.5rem 1rem;
+            margin: 0 0.2rem;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+.lang-btn:hover, .lang-btn.active {
+            background-color: var(--accent);
+            font-weight: bold;
+        }
+
+/* Header / Hero Section */
+        header {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: white;
+            padding: 3rem 1.5rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+/* Imej Profil */
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            object-position: top;
+            border-radius: 50%;
+            border: 4px solid var(--accent);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            margin-bottom: 1.5rem;
+            background-color: white;
+        }
+
+header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+            max-width: 600px;
+        }
+
+.contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+        }
+
+.contact-info a {
+            color: var(--text-light);
+            text-decoration: none;
+            background: rgba(255,255,255,0.1);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: background 0.3s;
+        }
+
+.contact-info a:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+        }
+
+/* Konten Utama */
+        .container {
+            max-width: 900px;
+            margin: -2rem auto 0;
+            padding: 0 1.5rem;
+            display: grid;
+            gap: 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+.card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+h2 {
+            color: var(--primary);
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            font-size: 1.4rem;
+        }
+
+/* Garis Masa Pengalaman */
+        .job-item {
+            margin-bottom: 2.5rem;
+            border-left: 3px solid #e2e8f0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+.job-item::before {
+            content: '';
+            position: absolute;
+            left: -9px;
+            top: 0;
+            width: 15px;
+            height: 15px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+.job-header {
+            margin-bottom: 1rem;
+        }
+
+.job-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--secondary);
+        }
+
+.job-company {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+.job-date {
+            font-style: italic;
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-top: 0.2rem;
+        }
+
+ul {
+            margin-left: 1.2rem;
+            margin-top: 0.8rem;
+        }
+
+li {
+            margin-bottom: 0.6rem;
+            color: #475569;
+        }
+
+/* Project Experience List */
+        .project-list li {
+            margin-bottom: 0.8rem;
+            border-bottom: 1px solid #f1f5f9;
+            padding-bottom: 0.8rem;
+        }
+        .project-list li:last-child {
+            border-bottom: none;
+        }
+
+/* Grid Kemahiran & Sijil */
+        .cert-item {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: flex-start;
+        }
+        .cert-item::before {
+            content: '📜';
+            margin-right: 10px;
+        }
+
+.skill-category {
+            margin-bottom: 1.5rem;
+        }
+        .skill-category h3 {
+            font-size: 1rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .skill-tag {
+            background: #f1f5f9;
+            color: var(--secondary);
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+/* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-top: 2rem;
+        }
+
+/* Responsif */
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.8rem; }
+            .container { margin-top: 1rem; }
+            .profile-img { width: 130px; height: 130px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="lang-bar">
+        <button class="lang-btn active" onclick="setLang('ms')">Bahasa Melayu</button>
+        <button class="lang-btn" onclick="setLang('en')">English</button>
+        <button class="lang-btn" onclick="setLang('cn')">Mandarin (中文)</button>
+        <button class="lang-btn" onclick="setLang('tm')">Tamil (தமிழ்)</button>
+    </div>
+
+<header>
+        <img src="https://arleta.site/interactivelink/2841/Gambar-Pasport-Nik.jpg" alt="Nik Mohd Nor Arif" class="profile-img">
+
+<h1 id="name">Nik Mohd Nor Arif Bin Yahya</h1>
+        <p id="role">Manager / Principal Consultant</p>
+
+<div class="contact-info">
+            <a href="mailto:nikarifyahya@gmail.com">📧 nikarifyahya@gmail.com</a>
+            <a href="tel:+601156767707">📞 +60 11-5676 7707</a>
+            <a href="https://www.linkedin.com/in/nik-mohd-nor-arif-yahya-0532a5186" target="_blank">🔗 LinkedIn</a>
+        </div>
+    </header>
+
+<div class="container">
+
+<section class="card">
+            <h2 id="exp-title">Pengalaman Kerja</h2>
+
+<div class="job-item">
+                <div class="job-header">
+                    <div class="job-title" id="job1-title">MANAGER / PRINCIPAL CONSULTANT</div>
+                    <div class="job-company">IYBE BIS POINT, Ayer Keroh, Melaka</div>
+                    <div class="job-date" id="job1-date">Apr 2021 - Present</div>
+                </div>
+                <ul id="job1-desc">
+                    </ul>
+            </div>
+
+<div class="job-item">
+                <div class="job-header">
+                    <div class="job-title" id="job2-title">HEAD, SOUTHERN REGIONAL OFFICE</div>
+                    <div class="job-company">Perbadanan Usahawan Nasional Berhad (PUNB), Johor Bahru</div>
+                    <div class="job-date" id="job2-date">Jun 2005 – Sept 2019</div>
+                </div>
+                <ul id="job2-desc">
+                    </ul>
+            </div>
+        </section>
+
+<section class="card">
+            <h2 id="proj-title">Pengalaman Projek</h2>
+            <ul class="project-list" id="project-list">
+                </ul>
+        </section>
+
+<section class="card">
+            <h2 id="edu-title">Pendidikan</h2>
+            <div class="job-item" style="margin-bottom:0; border:none;">
+                <div class="job-title" id="edu-degree">Master’s in Business Administration (MBA), Major in Global Marketing</div>
+                <div class="job-company">Management & Science University (MSU), Shah Alam, Selangor</div>
+                <div class="job-date">Sept 2015</div>
+            </div>
+        </section>
+
+<section class="card">
+            <h2 id="cert-title">Pensijilan Profesional</h2>
+            <div id="cert-list">
+                </div>
+        </section>
+
+<section class="card">
+            <h2 id="skill-title">Kemahiran</h2>
+
+<div class="skill-category">
+                <h3 id="skill-tech-label">Technical Skill</h3>
+                <div class="skill-tags" id="skill-tech"></div>
+            </div>
+
+<div class="skill-category">
+                <h3 id="skill-lang-label">Language</h3>
+                <div class="skill-tags" id="skill-lang"></div>
+            </div>
+
+<div class="skill-category">
+                <h3 id="skill-soft-label">Soft Skills</h3>
+                <div class="skill-tags" id="skill-soft"></div>
+            </div>
+        </section>
+
+</div>
+
+<footer>
+        <p>© 2025 Nik Mohd Nor Arif Bin Yahya. <span id="footer-text">Bersedia untuk berkhidmat.</span></p>
+    </footer>
+
+<script>
+        const data = {
+            ms: {
+                role: "Pengurus / Perunding Utama",
+                expTitle: "Pengalaman Kerja",
+                projTitle: "Pengalaman Projek",
+                eduTitle: "Pendidikan",
+                certTitle: "Pensijilan Profesional",
+                skillTitle: "Kemahiran",
+                techLabel: "Kemahiran Teknikal",
+                langLabel: "Bahasa",
+                softLabel: "Kemahiran Insaniah",
+                footerText: "Bersedia untuk berkhidmat.",
+                
+                job1Title: "PENGURUS / PERUNDING UTAMA",
+                job1Date: "Apr 2021 - Kini",
+                job1Desc: [
+                    "Menilai keperluan latihan, mereka bentuk program khusus untuk 500+ peserta, meningkatkan kemahiran sebanyak 15% (diukur melalui penilaian pra/pasca).",
+                    "Menyampaikan sesi latihan, bengkel, dan seminar yang menarik untuk lebih 1,000 peserta, mencapai kepuasan 95% (diukur melalui tinjauan maklum balas).",
+                    "Menilai keberkesanan program latihan melalui penilaian, tinjauan, dan maklum balas, menghasilkan peningkatan 10% dalam skor tinjauan keberkesanan latihan.",
+                    "Mengetuai pasukan 18 orang dalam membangunkan pelan induk strategik untuk PKS di Selangor, menghasilkan peningkatan 20% dalam hasil perniagaan untuk perusahaan sasaran.",
+                    "Melatih dan menyediakan perkhidmatan perundingan untuk Program SME Go Digital kepada lebih 1,000 usahawan di Johor, menghasilkan peningkatan 30% dalam jualan dalam talian dan 15% peningkatan bahagian pasaran."
+                ],
+
+                job2Title: "KETUA, PEJABAT WILAYAH SELATAN",
+                job2Date: "Jun 2005 – Sept 2019",
+                job2Desc: [
+                    "Memimpin pasukan 20 anggota untuk mencapai 100% kelulusan dan pemantauan KPI, meningkatkan prestasi, kecekapan, dan kejayaan organisasi, serta meningkatkan kepuasan pelanggan sebanyak 15%.",
+                    "Meluluskan pembiayaan untuk 400 usahawan berjumlah RM90 juta, menyumbang kepada pertumbuhan ekonomi, penciptaan pekerjaan, dan memupuk keusahawanan dalam komuniti, mewujudkan 1,000 pekerjaan baharu, dan melancarkan 200+ perniagaan baharu.",
+                    "Menjana RM5M-RM10M dalam pembiayaan, melepasi KPI sebanyak 20%, meningkatkan hasil, pertumbuhan perniagaan, dan mencapai sasaran kewangan."
+                ],
+
+                projects: [
+                    "Pengarah Projek bagi Zon Utara dan Zon Timur, Program GrowBIZ 2025 anjuran SME Corp Malaysia.",
+                    "Perunding Utama, Membangunkan Pelan Induk Perusahaan Mikro, Kecil, Sederhana (PMKS) Strategik 2023-2027 untuk negeri Selangor.",
+                    "Ahli Dewan Perniagaan & Perindustrian ASEAN (ACCI), Cawangan Selangor.",
+                    "Jurulatih untuk Bengkel Rancangan Perniagaan anjuran Institut Keusahawanan Negara (INSKEN), berlangsung pada 28 Feb-1 Mac 2023.",
+                    "Jurulatih untuk Misi Onlinekan Bisnes Menggunakan Google Tools anjuran Perbadanan Usahawan Nasional Berhad (PUNB) pada 19-20 Jul 2022.",
+                    "Jurulatih untuk Bengkel Rancangan Perniagaan anjuran Institut Keusahawanan Negara (INSKEN), berlangsung pada 15-16 Mac 2022.",
+                    "Biskaunselor INSKEN untuk Program Ebisclinic anjuran Institut Keusahawanan Negara (INSKEN) dari 1 Jan – 31 Dis 2022.",
+                    "Menyertai Bengkel Pembangunan Pelan Strategik Mikro, Kecil dan Sederhana (PMKS), anjuran Kementerian Pembangunan Usahawan dan Koperasi pada 12 Jan 2022.",
+                    "Jurulatih untuk PEP Talk Siri 4: Automasi Pengurusan Perniagaan anjuran Perbadanan Usahawan Nasional Berhad (PUNB) pada 22 Dis 2021.",
+                    "Jurulatih untuk Program SME Go Digital anjuran Perbadanan Usahawan Johor Sdn Bhd pada 17 Okt – 30 Nov 2021.",
+                    "Jurulatih untuk Program Be Your Own Boss (BYOB) anjuran Perbadanan Nasional Berhad (PERNAS) pada 23-27 Nov 2021.",
+                    "Jurulatih untuk Program Siswa Kalis Masa Hadapan anjuran Kolej Komuniti Jeli pada 2-3 Nov 2021.",
+                    "Jurulatih untuk Kursus Membina Web Ecommerce anjuran Kolej Komuniti Jeli pada 28 Jun 2021.",
+                    "Jurulatih/Perunding untuk Kursus Kesihatan dan Kecerdasan Diri anjuran Majlis Bandaraya Johor Bahru (MBJB) pada 1-2 Nov 2020."
+                ],
+
+                eduDegree: "Sarjana Pentadbiran Perniagaan (MBA), Major Pemasaran Global",
+                certs: [
+                    "HRD CORP Accredited Trainer, Human Resource Development Corporation (HRD Corp), Kuala Lumpur",
+                    "Islamic Certified Credit Executive (iCCE), Association of Development Financial Institution of Malaysia (ADFIM), Kuala Lumpur",
+                    "Professional Certificate in Halal Executive, Jabatan Kemajuan Islam Malaysia (JAKIM), Kuala Lumpur",
+                    "Professional Certificate in Business Coaching, Centre for Entrepreneur Development and Research (CEDAR), Kuala Lumpur",
+                    "Islamic Professional Credit Certified (iPCC), Association of Development Financial Institution of Malaysia (ADFIM), Kuala Lumpur"
+                ],
+                skillsTech: ["Microsoft 365 (Advance)", "Google Workspaces (Advance)", "Website (Intermediate)", "Adobe Illustrator (Intermediate)", "Canva (Advance)", "SPSS (Intermediate)"],
+                skillsLang: ["Bahasa Melayu (Native)", "English (Fluent)"],
+                skillsSoft: ["Communication", "Problem solving", "Teamwork", "Adaptability", "Followership", "Validation", "Managing up", "Emotional maturity", "Humility", "Multiple perspectives"]
+            },
+            
+            en: {
+                role: "Manager / Principal Consultant",
+                expTitle: "Work Experience",
+                projTitle: "Project Experience",
+                eduTitle: "Education",
+                certTitle: "Professional Certifications",
+                skillTitle: "Skills",
+                techLabel: "Technical Skill",
+                langLabel: "Language",
+                softLabel: "Soft Skills",
+                footerText: "Ready to contribute.",
+
+                job1Title: "MANAGER / PRINCIPAL CONSULTANT",
+                job1Date: "Apr 2021 - Present",
+                job1Desc: [
+                    "Assessed training needs, designed personalized programs for 500+, boosting skills by 15%, measured by pre/post-assessments.",
+                    "Delivered engaging training sessions, workshops, and seminars for over 1,000, achieving 95% satisfaction, measured by feedback surveys.",
+                    "Evaluated training programs' effectiveness through assessments, surveys, and feedback, resulting in a 10% increase in training effectiveness survey scores.",
+                    "Led an 18-person team in developing a strategic masterplan for SMEs in Selangor, resulting in a 20% increase in business revenue for targeted enterprises.",
+                    "Trained and provided consulting services for the SME Go Digital Program to over 1,000 entrepreneurs in Johor, resulting in a 30% increase in online sales and a 15% increase in market share."
+                ],
+
+                job2Title: "HEAD, SOUTHERN REGIONAL OFFICE",
+                job2Date: "Jun 2005 – Sept 2019",
+                job2Desc: [
+                    "Led 20-member team to achieve 100% KPI approval and monitoring, enhancing performance, efficiency, and organizational success, increasing customer satisfaction by 15%.",
+                    "Approved financing for 400 entrepreneurs totaling RM90 million, contributing to economic growth, job creation, and fostering entrepreneurship in the community, creating 1,000 new jobs, and launching 200+ new businesses.",
+                    "Generated RM5M-RM10M in financing, surpassing KPI by 20%, increasing revenue, business growth, and achieving financial targets."
+                ],
+
+                projects: [
+                    "Project Director for Northern and Eastern Zones, GrowBIZ 2025 Program organized by SME Corp Malaysia.",
+                    "Principal Consultant, Developed the Strategic Micro, Small, Medium Enterprise (MSME) masterplan 2023-2027 for Selangor state.",
+                    "Member for the ASEAN Chamber of Commerce & Industry (ACCI), Selangor Branch",
+                    "Trainer for the Business Plan Workshop organized by Institut Keusahawanan Negara (INSKEN), took place on 28 Feb-1 March 2023",
+                    "Trainer for the Misi Onlinekan Bisnes Menggunakan Google Tools organized by Perbadanan Usahawan Nasional Berhad (PUNB) on 19-20 Jul 2022",
+                    "Trainer for the Business Plan Workshop organized by Institut Keusahawanan Negara (INSKEN), took place on 15-16 March 2022.",
+                    "Biskaunselor INSKEN for the Ebisclinic Program organized by Institut Keusahawanan Negara (INSKEN) from 1Jan – 31 Dec 2022",
+                    "Participated in Bengkel Pembangunan Pelan Strategik Mikro, Kecil dan Sederhana (PMKS), organized by Kementerian Pembangunan Usahawan dan Koperasi on 12 Jan 2022",
+                    "Trainer for the PEP Talk Siri 4: Automasi Pengurusan Perniagaan organized by Perbadanan Usahawan Nasional Berhad (PUNB) on 22 Dec 2021",
+                    "Trainer for the SME Go Digital Program organized by Perbadanan Usahawan Johor Sdn Bhd on 17 Oct – 30 Nov 2021",
+                    "Trainer for the Be Your Own Boss (BYOB) Program organized by Perbadanan Nasional Berhad (PERNAS) on 23-27 Nov 2021.",
+                    "Trainer for the Program Siswa Kalis Masa Hadapan organized by Kolej Komuniti Jeli on 2-3 Nov 2021",
+                    "Trainer for the Kursus Membina Web Ecommerce organized by Kolej Komuniti Jeli on 28 Jun 2021",
+                    "Trainer/ Consultant for the Kursus Kesihatan dan Kecerdasan Diri organized by Majlis Bandaraya Johor Bahru (MBJB) on 1-2 Nov 2020."
+                ],
+
+                eduDegree: "Master’s in Business Administration (MBA), Major in Global Marketing",
+                certs: [
+                    "HRD CORP Accredited Trainer, Human Resource Development Corporation (HRD Corp), Kuala Lumpur",
+                    "Islamic Certified Credit Executive (iCCE), Association of Development Financial Institution of Malaysia (ADFIM), Kuala Lumpur",
+                    "Professional Certificate in Halal Executive, Jabatan Kemajuan Islam Malaysia (JAKIM), Kuala Lumpur",
+                    "Professional Certificate in Business Coaching, Centre for Entrepreneur Development and Research (CEDAR), Kuala Lumpur",
+                    "Islamic Professional Credit Certified (iPCC), Association of Development Financial Institution of Malaysia (ADFIM), Kuala Lumpur"
+                ],
+                skillsTech: ["Microsoft 365 (Advance)", "Google Workspaces (Advance)", "Website (Intermediate)", "Adobe Illustrator (Intermediate)", "Canva (Advance)", "SPSS (Intermediate)"],
+                skillsLang: ["Bahasa Melayu (Native)", "English (Fluent)"],
+                skillsSoft: ["Communication", "Problem solving", "Teamwork", "Adaptability", "Followership", "Validation", "Managing up", "Emotional maturity", "Humility", "Multiple perspectives"]
+            },
+            
+            cn: {
+                role: "经理 / 首席顾问",
+                expTitle: "工作经验",
+                projTitle: "项目经验",
+                eduTitle: "教育背景",
+                certTitle: "专业认证",
+                skillTitle: "技能",
+                techLabel: "技术技能",
+                langLabel: "语言",
+                softLabel: "软技能",
+                footerText: "随时准备为您服务。",
+
+                job1Title: "经理 / 首席顾问",
+                job1Date: "2021年4月 - 至今",
+                job1Desc: [
+                    "评估培训需求，为500多人设计个性化项目，通过前/后评估测量，技能提升15%。",
+                    "为1,000多人提供引人入胜的培训课程、研讨会，根据反馈调查，满意度达到95%。",
+                    "通过评估、调查和反馈评估培训项目的有效性，导致培训有效性调查分数增加10%。",
+                    "带领18人团队制定雪兰莪中小企业战略总体规划，导致目标企业的业务收入增加20%。",
+                    "为柔佛州1,000多名企业家提供中小企业数字化计划的培训和咨询服务，导致在线销售增加30%，市场份额增加15%。"
+                ],
+
+                job2Title: "南区办事处主管",
+                job2Date: "2005年6月 - 2019年9月",
+                job2Desc: [
+                    "带领20人团队实现100%的KPI批准和监控，提高绩效、效率和组织成功，客户满意度提高15%。",
+                    "批准为400名企业家提供总计9000万令吉的融资，为经济增长、就业创造做出贡献，创造1,000个新工作岗位，并启动200多项新业务。",
+                    "创造500万至1000万令吉的融资，超过KPI 20%，增加收入、业务增长并实现财务目标。"
+                ],
+
+                projects: [
+                    "2025年 GrowBIZ 计划（北区及东区）项目总监，由马来西亚中小企业机构（SME Corp Malaysia）主办。",
+                    "首席顾问，制定雪兰莪州2023-2027年微型、小型、中型企业（MSME）战略总体规划。",
+                    "东盟工商会（ACCI）雪兰莪分会会员。",
+                    "INSKEN主办的商业计划研讨会培训师（2023年2月28日-3月1日）。",
+                    "PUNB主办的利用Google工具在线化业务任务培训师（2022年7月19-20日）。",
+                    "INSKEN主办的商业计划研讨会培训师（2022年3月15-16日）。",
+                    "INSKEN Ebisclinic项目商业顾问（2022年1月1日-12月31日）。",
+                    "参与企业发展及合作社部主办的微型、小型和中型战略计划发展研讨会（2022年1月12日）。",
+                    "PUNB主办的PEP Talk系列4：商业管理自动化培训师（2021年12月22日）。",
+                    "Perbadanan Usahawan Johor Sdn Bhd主办的中小企业数字化计划培训师（2021年10月17日-11月30日）。",
+                    "PERNAS主办的Be Your Own Boss (BYOB)项目培训师（2021年11月23-27日）。",
+                    "Kolej Komuniti Jeli主办的未来防备学生项目培训师（2021年11月2-3日）。",
+                    "Kolej Komuniti Jeli主办的电子商务网站建设课程培训师（2021年6月28日）。",
+                    "新山市政厅（MBJB）主办的个人健康与智力课程培训师/顾问（2020年11月1-2日）。"
+                ],
+
+                eduDegree: "工商管理硕士（MBA），主修全球营销",
+                certs: [
+                    "HRD CORP 认证培训师, Human Resource Development Corporation",
+                    "伊斯兰认证信贷执行员 (iCCE), ADFIM",
+                    "清真执行员专业证书, JAKIM",
+                    "商业辅导专业证书, CEDAR",
+                    "伊斯兰专业信贷认证 (iPCC), ADFIM"
+                ],
+                skillsTech: ["Microsoft 365 (Advance)", "Google Workspaces (Advance)", "Website (Intermediate)", "Adobe Illustrator (Intermediate)", "Canva (Advance)", "SPSS (Intermediate)"],
+                skillsLang: ["Bahasa Melayu (Native)", "English (Fluent)"],
+                skillsSoft: ["Communication", "Problem solving", "Teamwork", "Adaptability", "Followership", "Validation", "Managing up", "Emotional maturity", "Humility", "Multiple perspectives"]
+            },
+
+            tm: {
+                role: "மேலாளர் / முதன்மை ஆலோசகர்",
+                expTitle: "வேலை அனுபவம்",
+                projTitle: "திட்ட அனுபவம்",
+                eduTitle: "கல்வி",
+                certTitle: "தொழில்முறை சான்றிதழ்கள்",
+                skillTitle: "திறன்கள்",
+                techLabel: "தொழில்நுட்ப திறன்",
+                langLabel: "மொழி",
+                softLabel: "மென் திறன்கள்",
+                footerText: "சேவையாற்றத் தயார்.",
+
+                job1Title: "மேலாளர் / முதன்மை ஆலோசகர்",
+                job1Date: "ஏப்ரல் 2021 - தற்சமயம்",
+                job1Desc: [
+                    "பயிற்சித் தேவைகளை மதிப்பிட்டு, 500+ பங்கேற்பாளர்களுக்கு தனிப்பயனாக்கப்பட்ட திட்டங்களை வடிவமைத்தார், திறன்களை 15% உயர்த்தினார்.",
+                    "1,000 க்கும் மேற்பட்டவர்களுக்கு ஈர்க்கக்கூடிய பயிற்சி அமர்வுகள் மற்றும் கருத்தரங்குகளை வழங்கினார் (95% திருப்தி).",
+                    "பயிற்சித் திட்டங்களின் செயல்திறனை மதிப்பீடு செய்து, பயிற்சி செயல்திறன் மதிப்பெண்களில் 10% அதிகரிப்பை ஏற்படுத்தினார்.",
+                    "சிலாங்கூர் SME களுக்கான மூலோபாயத் திட்டத்தை உருவாக்க 18 பேர் கொண்ட குழுவை வழிநடத்தினார் (வருவாய் 20% அதிகரிப்பு).",
+                    "ஜோகூரில் 1,000+ தொழில்முனைவோருக்கு SME Go Digital திட்டத்திற்கான பயிற்சி மற்றும் ஆலோசனை வழங்கினார்."
+                ],
+
+                job2Title: "தலைவர், தெற்கு பிராந்திய அலுவலகம்",
+                job2Date: "ஜூன் 2005 - செப்டம்பர் 2019",
+                job2Desc: [
+                    "20 பேர் கொண்ட குழுவை 100% KPI ஒப்புதல் மற்றும் கண்காணிப்பை அடைய வழிநடத்தினார், வாடிக்கையாளர் திருப்தியை 15% அதிகரித்தார்.",
+                    "400 தொழில்முனைவோருக்கு RM90 மில்லியன் நிதியுதவி அளித்தார், 1,000 புதிய வேலைகளை உருவாக்கினார்.",
+                    "RM5M-RM10M நிதியை உருவாக்கி, KPI-ஐ 20% தாண்டினார் மற்றும் வணிக வளர்ச்சியை அதிகரித்தார்."
+                ],
+
+                projects: [
+                    "SME Corp Malaysia ஏற்பாடு செய்த GrowBIZ 2025 திட்டத்தின் வடக்கு மற்றும் கிழக்கு மண்டலங்களுக்கான திட்ட இயக்குனர்.",
+                    "முதன்மை ஆலோசகர், சிலாங்கூர் மாநிலத்திற்கான MSME மாஸ்டர் பிளான் 2023-2027 உருவாக்கப்பட்டது.",
+                    "ஆசியான் வர்த்தக மற்றும் தொழில் சபையின் (ACCI) சிலாங்கூர் கிளை உறுப்பினர்.",
+                    "INSKEN ஏற்பாடு செய்த வணிகத் திட்டப் பயிலரங்கின் பயிற்சியாளர் (பிப் 28-மார்ச் 1 2023).",
+                    "PUNB ஏற்பாடு செய்த Google Tools மூலம் வணிகத்தை ஆன்லைன் செய்யும் திட்டத்தின் பயிற்சியாளர் (ஜூலை 19-20 2022).",
+                    "INSKEN ஏற்பாடு செய்த வணிகத் திட்டப் பயிலரங்கின் பயிற்சியாளர் (மார்ச் 15-16 2022).",
+                    "INSKEN இன் Ebisclinic திட்டத்திற்கான Biskaunselor (ஜனவரி 1 - டிசம்பர் 31 2022).",
+                    "PMKS மூலோபாயத் திட்ட மேம்பாட்டுப் பயிலரங்கில் பங்கேற்பு (ஜனவரி 12 2022).",
+                    "PUNB ஏற்பாடு செய்த PEP Talk வரிசை 4: வணிக மேலாண்மை ஆட்டோமேஷன் பயிற்சியாளர் (டிசம்பர் 22 2021).",
+                    "பெர்பாடனன் உசாவான் ஜோகூர் ஏற்பாடு செய்த SME Go Digital திட்டத்தின் பயிற்சியாளர் (அக் 17 - நவம்பர் 30 2021).",
+                    "PERNAS ஏற்பாடு செய்த Be Your Own Boss (BYOB) திட்டத்தின் பயிற்சியாளர் (நவம்பர் 23-27 2021).",
+                    "கோலேஜ் கம்யூனிட்டி ஜெலி ஏற்பாடு செய்த எதிர்கால மாணவர் திட்டத்தின் பயிற்சியாளர் (நவம்பர் 2-3 2021).",
+                    "Web Ecommerce உருவாக்கும் பாடத்தின் பயிற்சியாளர் (ஜூன் 28 2021).",
+                    "MBJB ஏற்பாடு செய்த சுகாதாரம் மற்றும் சுய அறிவுத்திறன் பாடத்தின் பயிற்சியாளர்/ஆலோசகர் (நவம்பர் 1-2 2020)."
+                ],
+
+                eduDegree: "வணிக நிர்வாகத்தில் முதுகலை (MBA), குளோபல் மார்க்கெட்டிங்",
+                certs: [
+                    "HRD CORP Accredited Trainer",
+                    "Islamic Certified Credit Executive (iCCE)",
+                    "Halal Executive Professional Certificate (JAKIM)",
+                    "Professional Certificate in Business Coaching (CEDAR)",
+                    "Islamic Professional Credit Certified (iPCC)"
+                ],
+                skillsTech: ["Microsoft 365 (Advance)", "Google Workspaces (Advance)", "Website (Intermediate)", "Adobe Illustrator (Intermediate)", "Canva (Advance)", "SPSS (Intermediate)"],
+                skillsLang: ["Bahasa Melayu (Native)", "English (Fluent)"],
+                skillsSoft: ["Communication", "Problem solving", "Teamwork", "Adaptability", "Followership", "Validation", "Managing up", "Emotional maturity", "Humility", "Multiple perspectives"]
+            }
+        };
+
+        function setLang(lang) {
+            const d = data[lang];
+            
+            // Text asas
+            document.getElementById('role').textContent = d.role;
+            document.getElementById('exp-title').textContent = d.expTitle;
+            document.getElementById('proj-title').textContent = d.projTitle;
+            document.getElementById('edu-title').textContent = d.eduTitle;
+            document.getElementById('cert-title').textContent = d.certTitle;
+            document.getElementById('skill-title').textContent = d.skillTitle;
+            document.getElementById('skill-tech-label').textContent = d.techLabel;
+            document.getElementById('skill-lang-label').textContent = d.langLabel;
+            document.getElementById('skill-soft-label').textContent = d.softLabel;
+            document.getElementById('footer-text').textContent = d.footerText;
+            document.getElementById('edu-degree').textContent = d.eduDegree;
+
+            // Job 1
+            document.getElementById('job1-title').textContent = d.job1Title;
+            document.getElementById('job1-date').textContent = d.job1Date;
+            document.getElementById('job1-desc').innerHTML = d.job1Desc.map(item => `<li>${item}</li>`).join('');
+
+            // Job 2
+            document.getElementById('job2-title').textContent = d.job2Title;
+            document.getElementById('job2-date').textContent = d.job2Date;
+            document.getElementById('job2-desc').innerHTML = d.job2Desc.map(item => `<li>${item}</li>`).join('');
+
+            // Projects
+            document.getElementById('project-list').innerHTML = d.projects.map(item => `<li>${item}</li>`).join('');
+
+            // Certs
+            document.getElementById('cert-list').innerHTML = d.certs.map(item => `<div class="cert-item">${item}</div>`).join('');
+
+            // Skills
+            document.getElementById('skill-tech').innerHTML = d.skillsTech.map(item => `<span class="skill-tag">${item}</span>`).join('');
+            document.getElementById('skill-lang').innerHTML = d.skillsLang.map(item => `<span class="skill-tag">${item}</span>`).join('');
+            document.getElementById('skill-soft').innerHTML = d.skillsSoft.map(item => `<span class="skill-tag">${item}</span>`).join('');
+
+            // Butang aktif
+            const btns = document.querySelectorAll('.lang-btn');
+            btns.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        // Tetapan asal kepada Bahasa Melayu
+        setLang('ms');
+    </script>
+</body>
+</html>
